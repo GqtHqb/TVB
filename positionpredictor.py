@@ -15,11 +15,12 @@ st.title(':rainbow[Position Predictor]')
 col1, col2 = st.columns(2)
 
 with col1:
+    height = st.slider('Height (cm)', 130, 220, 180)
+    weight = st.slider('Weight (kg)', 40, 150, 65)
+
     camera_on = st.toggle("Enable camera")
     img = st.camera_input('Bla', disabled=not camera_on, label_visibility='collapsed')
 
-    height = st.slider('Height (cm)', 130, 220, 180)
-    weight = st.slider('Weight (kg)', 40, 150, 65)
 
 with col2:
     if img:
@@ -42,6 +43,7 @@ with col2:
         prediction_value = prediction.flatten()[0]
         prediction_label = pp.value2label(prediction_value)
 
+        st.header(f'Prediction: **:rainbow[{prediction_label}]** ({prediction_value:.2f})')
 
         import plotly.figure_factory as ff
 
@@ -114,7 +116,22 @@ with col2:
         fig.update_layout(
             width=800,  # Set chart width
             height=300,  # Set chart height
+            xaxis=dict(tickfont=dict(color="black")),  # Set x-axis tick values to black
             yaxis=dict(range=[-0.1, 1.1]),  # Extend y-axis range to make space for the text
+            plot_bgcolor='white',
+            paper_bgcolor='white',
+            margin=dict(
+                # l=50,  # Left margin
+                # r=50,  # Right margin
+                t=0,  # Top margin
+                b=0   # Bottom margin
+            ),  # Reduce margins to minimize empty space
+            # title=dict(
+            #     text=f'Prediction: {prediction_label}',  # Title text
+            #     font=dict(size=16, color="black"),  # Set title font size and color
+            #     x=0.5,  # Position title at the center
+            #     xanchor="center"  # Anchor the title to the center
+            # )
         )
 
         # Show the plot in Streamlit
