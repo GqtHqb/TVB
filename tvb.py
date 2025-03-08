@@ -33,7 +33,7 @@ with col2:
 
         # Load model        
         model = CNNWithAdditionalFeatures()
-        model.load_state_dict(torch.load('topversbottom_model.pth'))
+        model.load_state_dict(torch.load('tvb_model.pth'))
 
         model.eval()
         with torch.no_grad():
