@@ -32,7 +32,7 @@ class Preprocessing:
         return value
     
     def value2label(self, value):
-        conversions2 = {'Top': 1.0, 'Vers Top': 0.75, 'Vers': 0.5, 'Vers Bottom': 0.25, 'Bottom': 0.0}
+        conversions2 = {'Top': 1.0, 'Vers Top': 0.75, 'Versatile': 0.5, 'Vers Bottom': 0.25, 'Bottom': 0.0}
         label = min(conversions2, key = lambda k: abs(conversions2[k] - value))
 
         return label
