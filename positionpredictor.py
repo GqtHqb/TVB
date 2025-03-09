@@ -49,7 +49,7 @@ with col2:
 
         bullet_data = [
             {
-                "label": "Position",
+                "label": "", # Links van de horizontale bar
                 "sublabel": "Top/Vers/Bottom",
                 "range": [0.0, 0.0],
                 "performance": [0.125, 0.375, 0.625, 0.875, 1.0],
@@ -121,7 +121,7 @@ with col2:
             plot_bgcolor='white',
             paper_bgcolor='white',
             margin=dict(
-                # l=50,  # Left margin
+                l=0,  # Left margin
                 # r=50,  # Right margin
                 t=0,  # Top margin
                 b=0   # Bottom margin
