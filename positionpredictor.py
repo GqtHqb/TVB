@@ -76,7 +76,7 @@ with col2:
             text= f'{prediction_label} ({prediction_value:.2f})',  # Text to show
             showarrow=True,  # Arrow pointing to the marker
             arrowhead=2,  # Style of the arrow
-            font=dict(size=12, color="black"),  # Font size and color
+            font=dict(size=15, color="black"),  # Font size and color
             align="center",
             arrowsize=1,
             arrowcolor="black",  # Color of the arrow
