@@ -68,6 +68,16 @@ with col2:
             orientation='h',
             title=f'Prediction: {prediction_label}'
         )
+        
+        # Customize markers
+        fig.update_traces(
+            marker=dict(
+                color='purple',  # Change marker color
+                size=15,      # Change marker size
+                symbol='diamond'  # Change marker shape
+            ),
+            selector=dict(mode='markers')  # Apply only to markers
+        )
 
         # Add annotation for the prediction point
         fig.add_annotation(
